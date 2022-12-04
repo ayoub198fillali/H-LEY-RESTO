@@ -150,7 +150,10 @@ async function fetchData() {
   console.log("Start Fetch");
   try {
     // let myData = await fetch("../JSON/Planet.json");
-    let myData = await fetch("../JSON/menu.json");
+    // let myData = await fetch("../JSON/menu.json");
+    let myData = await fetch(
+      "https://raw.githubusercontent.com/ayoub198fillali/H-LEY-RESTO/main/JSON/menu.json"
+    );
 
     let jsData = await myData.json();
     let myStrCode = "";
