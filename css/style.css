@@ -70,6 +70,7 @@ section:nth-child(even) {
   border-radius: 0.5rem;
   cursor: pointer;
   padding: 0.8rem 3rem;
+  width: fit-content;
 }
 
 .btn:hover {
@@ -333,6 +334,8 @@ header .icons #menu-bars {
 
 .about .row .content {
   flex: 1 1 45rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .about .row .content h3 {
@@ -340,12 +343,24 @@ header .icons #menu-bars {
   font-size: 4rem;
   padding: 0.5rem 0;
 }
+.logoAbout {
+  width: 250px;
+  height: 250px;
+}
+.plogoAbout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .about .row .content p {
   color: var(--light-color);
   font-size: 1.5rem;
   padding: 0.5rem 0;
   line-height: 2;
+  width: 68%;
+  text-align: justify;
 }
 
 .about .row .content .icons-container {
@@ -391,7 +406,7 @@ header .icons #menu-bars {
   box-shadow: var(--box-shadow);
 }
 .menu .box-container .box:hover {
-  background: rgb(239, 239, 239);
+  background: #4c281409;
 }
 
 .menu .box-container .box .image {
@@ -693,6 +708,13 @@ header .icons #menu-bars {
 
   .menu .box-container .box .content h3 {
     height: auto;
+  }
+
+  .plogoAbout {
+    flex-direction: column-reverse;
+  }
+  .about .row .content p {
+    width: 90%;
   }
 
   .dishes .box-container .box h3 {

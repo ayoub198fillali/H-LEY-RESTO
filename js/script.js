@@ -1,5 +1,5 @@
 // Config //
-let POPULAR = [1, 3, 4, 6];
+let POPULAR = [1, 3, 4, 6, 18];
 ////////////
 let menu = document.querySelector("#menu-bars");
 let navbar = document.querySelector(".navbar");
@@ -147,6 +147,7 @@ $("img").imagePopup({
 /////////////////////////////////////////////////////////
 ////////////////////DATA FROM SERVER/////////////////////
 /////////////////////////////////////////////////////////
+let ii = 0;
 let description = {};
 // Get Data From Server
 async function fetchData() {
@@ -208,10 +209,11 @@ async function fetchData() {
       });
 
       if (POPULAR.includes(index + 1)) {
+        ii++;
         myStrCode = `<div class="box" id="plat-${index + 1}">
         <a id="fav-plat-${index + 1}" class="fas fa-heart"></a>
         <a id="eye-plat-${index + 1}" class="fas fa-eye"></a>
-        <img src="images/plat-${index + 1}.png" alt="" />
+        <img src="images/plat-${ii}.png" alt="" />
         <h3>${element.Name}</h3>
         <div class="stars">
           `;
