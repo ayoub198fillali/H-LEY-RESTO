@@ -271,40 +271,72 @@
       <h3 class="sub-heading">Commandez maintenant</h3>
       <h1 class="heading">facile et rapide</h1>
 
-      <form action="">
+      <form id="ContactForm">
         <div class="inputBox">
           <div class="input">
-            <span>votre nom</span>
-            <input type="text" placeholder="entrez votre nom" />
+            <span
+              >votre nom
+              <p style="color: red; display: inline">*</p>
+            </span>
+            <input
+              id="formeNom"
+              type="text"
+              placeholder="entrez votre nom"
+              maxlength="50"
+              required
+            />
           </div>
 
           <div class="input">
             <span>votre commande</span>
-            <input type="text" placeholder="entrez votre commande" />
+            <input
+              id="formeCommande"
+              type="text"
+              placeholder="entrez votre commande"
+              maxlength="150"
+            />
           </div>
         </div>
         <div class="inputBox">
           <div class="input">
-            <span>your number</span>
-            <input type="votre numéro" placeholder="Entrez votre numéro" />
+            <span
+              >your number
+              <p style="color: red; display: inline">*</p></span
+            >
+            <input
+              id="formeNumber"
+              type="votre numéro"
+              placeholder="Entrez votre numéro"
+              maxlength="15"
+              required
+            />
           </div>
 
           <div class="input">
             <span>combien</span>
-            <input type="number" placeholder="combien de commandes" />
+            <input
+              id="formeCombien"
+              type="number"
+              placeholder="combien de commandes"
+            />
           </div>
         </div>
 
         <div class="inputBox">
           <div class="input" style="width: 100%">
-            <span>votre message</span>
+            <span
+              >votre message
+              <p style="color: red; display: inline">*</p></span
+            >
             <textarea
               name=""
               placeholder="entrez votre message"
-              id=""
+              id="formeMessage"
               cols="60"
               rows="10"
               style="width: 100%"
+              maxlength="900"
+              required
             ></textarea>
           </div>
         </div>
@@ -365,6 +397,7 @@
 
     <script src="js/Jquery.min.js"></script>
     <script src="js/sweetalert2.min.js"></script>
+    <script src="js/email.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- custom js file link  -->

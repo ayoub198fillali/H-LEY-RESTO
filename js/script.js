@@ -273,3 +273,32 @@ fetchData();
 //     $(this).toggleClass("addedFav2");
 //   });
 // });
+
+//
+
+$("#ContactForm").on("submit", function (e) {
+  e.preventDefault();
+  // console.log("Sended");
+
+  $.getJSON("https://api.ipify.org?format=json", function (data) {
+    emailjs.init("KAe5kfyvpRuOXbuIw"); //please encrypted user id for malicious attacks
+    // https://dashboard.emailjs.com/admin/templates/tvk9clb
+    let templateParams = {
+      from_name: $("#formeNom").val(),
+      from_num: $("#formeCommande").val(),
+      commande: $("#formeNumber").val(),
+      nbcommande: $("#formeCombien").val(),
+      msg: $("#formeMessage").val(),
+    };
+
+    emailjs.send("service_zhki1yu", "template_wxi2e5g", templateParams).then(
+      function () {
+        myNotif("success", "Message envoyé", 1000);
+        $("#ContactForm")[0].reset();
+      },
+      function () {
+        myNotif("error", "Message non envoyé...", 1000);
+      }
+    );
+  });
+});
