@@ -97,6 +97,12 @@
     "Prix": "11.99"
   },
   {
+    "Name": "Spaghetti viande au choix",
+    "Rate": 3.5,
+    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Prix": "7.99"
+  },
+  {
     "Name": "Banane salade aux betteraves poulet",
     "Rate": 3.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",

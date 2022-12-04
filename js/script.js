@@ -1,3 +1,6 @@
+// Config //
+let POPULAR = [1, 3, 4, 6];
+////////////
 let menu = document.querySelector("#menu-bars");
 let navbar = document.querySelector(".navbar");
 
@@ -175,15 +178,13 @@ async function fetchData() {
         myStrCode += `<i class="fas fa-star"></i>`;
       }
       if (!(Number(element.Rate) === element.Rate && element.Rate % 1 === 0))
-        myStrCode += `<i class="fas fa-star-half-alt"></i>`;
-
-      myStrCode += `
-            </div>
+        myStrCode += `<i class="fas fa-star-half-alt"></i> `;
+      myStrCode += ` </div>
             <h3>${element.Name}</h3>
             <p>
               ${element.Description}
             </p>
-            <a href="#" class="btn">add to cart</a>
+            <a href="#order" class="btn">Commander</a>
             <span class="price">€${element.Prix}</span>
           </div>
         </div >
@@ -205,6 +206,43 @@ async function fetchData() {
           );
         $(this).toggleClass("addedFav2");
       });
+
+      if (POPULAR.includes(index + 1)) {
+        myStrCode = `<div class="box" id="plat-${index + 1}">
+        <a id="fav-plat-${index + 1}" class="fas fa-heart"></a>
+        <a id="eye-plat-${index + 1}" class="fas fa-eye"></a>
+        <img src="images/plat-${index + 1}.png" alt="" />
+        <h3>${element.Name}</h3>
+        <div class="stars">
+          `;
+
+        for (let i = 0; i < Math.floor(element.Rate); i++) {
+          myStrCode += `<i class="fas fa-star"></i>`;
+        }
+        if (!(Number(element.Rate) === element.Rate && element.Rate % 1 === 0))
+          myStrCode += `<i class="fas fa-star-half-alt"></i>`;
+        myStrCode += ` </div>
+          <span class="price">€${element.Prix}</span>
+          <a href="#order" class="btn">Commander</a>
+        </div>`;
+        $("#myPlat").append(myStrCode);
+        $(`#fav-plat-${index + 1}`).on("click", function (e) {
+          e.preventDefault();
+          if (!$(this).hasClass("addedFav"))
+            myNotif(
+              "info",
+              `Le plat '${element.Name}' a été ajoutée aux favoris`,
+              2000
+            );
+          else
+            myNotif(
+              "info",
+              `Le plat '${element.Name}' a été supprimé des favoris`,
+              2000
+            );
+          $(this).toggleClass("addedFav");
+        });
+      }
     }
   } catch (reason) {
     console.log(`Reason: ${reason}`);
