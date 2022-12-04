@@ -312,6 +312,7 @@ header .icons #menu-bars {
   font-weight: bolder;
   margin-right: 1rem;
   font-size: 2.5rem;
+  display: block;
 }
 
 .about .row {
@@ -429,6 +430,7 @@ header .icons #menu-bars {
 .menu .box-container .box .content {
   padding: 2rem;
   padding-top: 0;
+  position: relative;
 }
 
 .menu .box-container .box .content .stars {
@@ -443,6 +445,8 @@ header .icons #menu-bars {
 .menu .box-container .box .content h3 {
   color: var(--black);
   font-size: 2.5rem;
+  height: 65px;
+  overflow: hidden;
 }
 
 .menu .box-container .box .content p {
@@ -454,8 +458,11 @@ header .icons #menu-bars {
 
 .menu .box-container .box .content .price {
   color: var(--mainColor);
-  margin-left: 1rem;
+  margin-right: 1rem;
   font-size: 2.5rem;
+  position: absolute;
+  margin-top: 1rem;
+  right: 5px;
 }
 
 .review .slide {
@@ -681,6 +688,10 @@ header .icons #menu-bars {
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+
+  .menu .box-container .box .content h3 {
+    height: auto;
   }
 
   .dishes .box-container .box img {

@@ -93,26 +93,6 @@ window.onload = fadeOut;
 // );
 // document.head.appendChild(jQueryScript);
 
-$(".dishes .box-container .box .fa-heart").each(function (index) {
-  $(this).on("click", function (e) {
-    e.preventDefault();
-    console.log($(this)[0]);
-    console.log("Case 1");
-    myNotif("info", "La commende est ajouté dans les favoris", 20000);
-    $(this).toggleClass("addedFav");
-  });
-});
-
-$(".menu .box-container .box .image .fa-heart").each(function (index) {
-  $(this).on("click", function (e) {
-    e.preventDefault();
-
-    console.log("Case 2");
-    console.log($(this)[0]);
-    $(this).toggleClass("addedFav2");
-  });
-});
-
 function myNotif(type, msg, time = 1000) {
   const Toast = Swal.mixin({
     toast: true,
@@ -158,3 +138,95 @@ $("img").imagePopup({
     console.log("closed");
   },
 });
+
+// //////////////////////////
+
+/////////////////////////////////////////////////////////
+////////////////////DATA FROM SERVER/////////////////////
+/////////////////////////////////////////////////////////
+let description = {};
+// Get Data From Server
+async function fetchData() {
+  console.log("Start Fetch");
+  try {
+    // let myData = await fetch("../JSON/Planet.json");
+    let myData = await fetch("../JSON/menu.json");
+
+    let jsData = await myData.json();
+    let myStrCode = "";
+    for (const [index, element] of jsData.entries()) {
+      console.log(index);
+      console.log(element);
+
+      myStrCode = `<div class="box" id="menu-${index + 1}">
+
+          <div class="image">
+            <img src="images/menu-${index + 1}.jpg" alt="">
+            <a id="fav-menu-${index + 1}" class="fas fa-heart"></a>
+          </div>
+          <div class="content">
+            <div class="stars">
+            `;
+
+      for (let i = 0; i < Math.floor(element.Rate); i++) {
+        myStrCode += `<i class="fas fa-star"></i>`;
+      }
+      if (!(Number(element.Rate) === element.Rate && element.Rate % 1 === 0))
+        myStrCode += `<i class="fas fa-star-half-alt"></i>`;
+
+      myStrCode += `
+            </div>
+            <h3>${element.Name}</h3>
+            <p>
+              ${element.Description}
+            </p>
+            <a href="#" class="btn">add to cart</a>
+            <span class="price">€${element.Prix}</span>
+          </div>
+        </div >
+        </div>`;
+      $("#myMenu").append(myStrCode);
+      $(`#fav-menu-${index + 1}`).on("click", function (e) {
+        e.preventDefault();
+        if (!$(this).hasClass("addedFav2"))
+          myNotif(
+            "info",
+            `Le plat '${element.Name}' a été ajoutée aux favoris`,
+            2000
+          );
+        else
+          myNotif(
+            "info",
+            `Le plat '${element.Name}' a été supprimé des favoris`,
+            2000
+          );
+        $(this).toggleClass("addedFav2");
+      });
+    }
+  } catch (reason) {
+    console.log(`Reason: ${reason}`);
+  } finally {
+    console.log("After Fetch");
+  }
+}
+fetchData();
+
+// $(".dishes .box-container .box .fa-heart").each(function (index) {
+//   $(this).on("click", function (e) {
+//     e.preventDefault();
+//     console.log($(this)[0]);
+//     console.log("Case 1");
+//     myNotif("info", "La commende est ajouté dans les favoris", 20000);
+//     $(this).toggleClass("addedFav");
+//   });
+// });
+
+// $(".menu .box-container .box .image .fa-heart").each(function (index) {
+//   $(this).on("click", function (e) {
+//     e.preventDefault();
+
+//     console.log("Case 2");
+//     console.log($(this)[0]);
+//     $(this).toggleClass("addedFav2");
+//   });
+// });
