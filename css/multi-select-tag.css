@@ -1,23 +1,22 @@
 .mult-select-tag {
   display: flex;
   width: 100%;
-  flex-direction: column;
-  align-items: center;
+  height: 50%;
   position: relative;
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),
     0 1px 2px -1px var(--tw-shadow-color);
   --border-color: rgb(218, 221, 224);
   font-family: Verdana, sans-serif;
+  align-items: stretch;
 }
 .mult-select-tag .wrapper {
   background: #eee;
   border-radius: 0.5rem;
-  padding: 1rem;
+  /* padding: 1rem; */
   font-size: 1.6rem;
   color: var(--black);
   text-transform: none;
-  margin-bottom: 1rem;
   width: 100%;
 }
 .mult-select-tag .body {
@@ -27,6 +26,7 @@
   min-height: 2.15rem;
   width: 100%;
   min-width: 14rem;
+  height: 100%;
 }
 .mult-select-tag .input-container {
   display: flex;
@@ -78,7 +78,7 @@
 .mult-select-tag .drawer {
   position: absolute;
   background: #fff;
-  max-height: 15rem;
+  /* max-height: 15rem; */
   z-index: 40;
   top: 98%;
   width: 100%;
@@ -95,6 +95,7 @@
   padding: 0.5rem;
   border-radius: 0.25rem;
   cursor: pointer;
+  font-size: 12px;
 }
 .mult-select-tag ul li:hover {
   background: rgb(243 244 246);
@@ -114,7 +115,7 @@
 .mult-select-tag .item-label {
   max-width: 100%;
   line-height: 1;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   flex: 0 1 auto;
   color: #2c7a7b;
