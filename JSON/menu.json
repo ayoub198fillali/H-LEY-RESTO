@@ -1,111 +1,117 @@
 [
   {
     "Name": "Riz sauce haricots légumes",
-    "Rate": 4,
+    "Rate": 5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "12.99"
+    "Prix": "15.00"
   },
 
   {
     "Name": "Bannane & œufs ",
     "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "14.99"
+    "Prix": "12.00"
   },
   {
     "Name": "Bouillon bœuf et légumes ",
-    "Rate": 1.5,
+    "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "12.99"
+    "Prix": "13.00"
   },
   {
     "Name": "Riz collé viande au choix",
-    "Rate": 2.5,
+    "Rate": 4,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "12.99"
+    "Prix": "12.00"
   },
   {
     "Name": "Banane pesé poisson",
-    "Rate": 3,
+    "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "9.99"
+    "Prix": "10.00"
   },
   {
     "Name": "Riz collé salade viande au choix",
     "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "12.99"
+    "Prix": "11.00"
   },
   {
     "Name": "Bokit v1",
     "Rate": 5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "12.99"
+    "Prix": "6.00"
   },
   {
     "Name": "Bokit v2",
-    "Rate": 4,
+    "Rate": 5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "14.99"
+    "Prix": "7.00"
   },
   {
     "Name": "Bokit v3",
-    "Rate": 2.5,
+    "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "12.99"
+    "Prix": "8.00"
   },
   {
     "Name": "Pâte viande au choix",
-    "Rate": 3.5,
+    "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "11.99"
+    "Prix": "2.50"
   },
   {
     "Name": "Banane pesé porc pikliz",
     "Rate": 5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "11.99"
+    "Prix": "10.00"
   },
   {
     "Name": "Accras",
-    "Rate": 3.5,
+    "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "11.99"
+    "Prix": "10.00"
   },
   {
     "Name": "Alloco",
-    "Rate": 3.5,
+    "Rate": 5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "11.99"
+    "Prix": "9.00"
   },
   {
     "Name": "Banane igname & pomme de terre viande au choix",
-    "Rate": 3.5,
+    "Rate": 5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "11.99"
+    "Prix": "11.00"
   },
   {
     "Name": "Banane pesé cabrit",
-    "Rate": 3.5,
+    "Rate": 5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "11.99"
+    "Prix": "12.00"
   },
   {
     "Name": "Banane pesé poisson salade",
-    "Rate": 3.5,
+    "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "11.99"
+    "Prix": "15.00"
   },
   {
     "Name": "Spaghetti viande au choix",
-    "Rate": 3.5,
+    "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "7.99"
+    "Prix": "7.00"
   },
   {
     "Name": "Banane salade aux betteraves poulet",
-    "Rate": 3.5,
+    "Rate": 4.5,
     "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
-    "Prix": "11.99"
+    "Prix": "11.00"
+  },
+  {
+    "Name": "Ailes de poulet",
+    "Rate": 5,
+    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Prix": "5.00"
   }
 ]
