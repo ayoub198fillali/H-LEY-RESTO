@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complete Responsive Food Website Design Tutorial</title>
+    <title>H-LEY RESTO</title>
 
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="css/multi-select-tag.css">
+    <link rel="stylesheet" href="css/multi-select-tag.css" />
 
     <!-- font awesome cdn link  -->
     <link
@@ -36,8 +36,8 @@
       <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
         <i class="fas fa-search" id="search-icon"></i>
-        <a href="#" class="fas fa-heart"></a>
-        <!-- <a href="#" class="fas fa-shopping-cart"></a> -->
+        <a href="#" class="fas fa-heart" id="favorite-pack"></a>
+        <!-- fas fa-shopping-cart -->
       </div>
     </header>
     <!-- header section ends-->
@@ -46,7 +46,7 @@
     <form action="" id="search-form">
       <input
         type="search"
-        placeholder="search here..."
+        placeholder="Chercher ici..."
         name=""
         id="search-box"
       />
@@ -282,7 +282,7 @@
             <input
               id="formeNom"
               type="text"
-              placeholder="entrez votre nom"
+              placeholder="Entrez votre nom"
               maxlength="50"
               required
             />
@@ -293,12 +293,12 @@
               >Votre commande
               <p style="color: red; display: inline">*</p></span
             >
-                <select name="multipleselect" id="multipleselect" multiple>
-                     <option>A</option>
-                     <option>B</option>
-                     <option>C</option>
-                     <option>D</option>
-                </select>
+            <select name="multipleselect" id="multipleselect" multiple>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+            </select>
           </div>
         </div>
         <div class="inputBox">
@@ -321,7 +321,7 @@
             <input
               id="formeCombien"
               type="number"
-              placeholder="combien de commandes"
+              placeholder="Combien de commandes"
             />
           </div>
         </div>
@@ -408,6 +408,8 @@
     <script src="js/jquery.image-popup.js"></script>
     <script src="js/script.js"></script>
     <script src="js/multi-select-tag.js"></script>
-    <script> new MultiSelectTag('multipleselect') </script>
+    <script>
+      new MultiSelectTag("multipleselect");
+    </script>
   </body>
 </html>
