@@ -1,4 +1,5 @@
 // Config //
+let debug = false;
 let POPULAR = [1, 3, 4, 6, 18];
 ////////////
 let menu = document.querySelector("#menu-bars");
@@ -89,13 +90,6 @@ function fadeOut() {
 
 window.onload = fadeOut;
 
-// var jQueryScript = document.createElement("script");
-// jQueryScript.setAttribute(
-//   "src",
-//   "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-// );
-// document.head.appendChild(jQueryScript);
-
 function myNotif(type, msg, time = 1000) {
   const Toast = Swal.mixin({
     toast: true,
@@ -151,7 +145,7 @@ let ii = 0;
 let description = {};
 // Get Data From Server
 async function fetchData() {
-  console.log("Start Fetch");
+  if (debug) console.log("Start Fetch");
   try {
     // let myData = await fetch("../JSON/Planet.json");
     // let myData = await fetch("../JSON/menu.json");
@@ -162,9 +156,10 @@ async function fetchData() {
     let jsData = await myData.json();
     let myStrCode = "";
     for (const [index, element] of jsData.entries()) {
-      console.log(index);
-      console.log(element);
-
+      if (debug) {
+        console.log(index);
+        console.log(element);
+      }
       myStrCode = `<div class="box" id="menu-${index + 1}">
 
           <div class="image">
@@ -206,8 +201,9 @@ async function fetchData() {
             2000
           );
         $(this).toggleClass("addedFav2");
+        UpdateCookiesFavMenu2();
       });
-
+      // ------------------------------------------------------------- //
       if (POPULAR.includes(index + 1)) {
         ii++;
         myStrCode = `<div class="box" id="plat-${index + 1}">
@@ -243,42 +239,100 @@ async function fetchData() {
               2000
             );
           $(this).toggleClass("addedFav");
+          UpdateCookiesFavMenu1();
         });
       }
     }
   } catch (reason) {
     console.log(`Reason: ${reason}`);
   } finally {
-    console.log("After Fetch");
+    if (debug) console.log("After Fetch");
+    applyAllCookies();
   }
 }
 fetchData();
 
-// $(".dishes .box-container .box .fa-heart").each(function (index) {
-//   $(this).on("click", function (e) {
-//     e.preventDefault();
-//     console.log($(this)[0]);
-//     console.log("Case 1");
-//     myNotif("info", "La commende est ajouté dans les favoris", 20000);
-//     $(this).toggleClass("addedFav");
-//   });
-// });
+$("#favorite-pack").on("click", function (e) {
+  e.preventDefault();
 
-// $(".menu .box-container .box .image .fa-heart").each(function (index) {
-//   $(this).on("click", function (e) {
-//     e.preventDefault();
+  myNotif(
+    "info",
+    `Les plats populaires Favoris:\n 1, 2, 3
+   \nLes plats Menu Favoris:\n 4, 5, 6    `,
+    2000
+  );
+});
 
-//     console.log("Case 2");
-//     console.log($(this)[0]);
-//     $(this).toggleClass("addedFav2");
-//   });
-// });
+// Cookies --------------------------------------------------------------
 
-//
+// Basic Functions To Treat Cookies
+function setCookie(cname, cvalue) {
+  let exdays = 2300;
+  const d = new Date();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(";");
+  for (const element of ca) {
+    let c = element;
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function checkCookie() {
+  let user = getCookie("username");
+  return user != "";
+}
 
+// Update Cookies For Plat(fav-plat) after Every Clic
+function UpdateCookiesFavMenu1() {
+  let arrFavMenu1 = [];
+  console.log("___________________");
+  $(".addedFav").each(function () {
+    arrFavMenu1.push($(this).attr("id").split("-")[2]);
+  });
+  console.log(arrFavMenu1.join("!"));
+  setCookie("fav-plat", arrFavMenu1.join("!"));
+}
+
+// Update Cookies For Menu(fav-menu) after Every Clic
+function UpdateCookiesFavMenu2() {
+  let arrFavMenu2 = [];
+  console.log("___________________");
+  $(".addedFav2").each(function () {
+    arrFavMenu2.push($(this).attr("id").split("-")[2]);
+  });
+  console.log(arrFavMenu2.join("!"));
+  setCookie("fav-menu", arrFavMenu2.join("!"));
+}
+
+// Add In Favorite All Posts Belong To Cookies (for plat and menu )
+function applyAllCookies() {
+  let favPlat = getCookie("fav-plat");
+  for (let val of favPlat.split("!")) {
+    if (debug) console.log("fav-plat-" + val);
+    $("#fav-plat-" + val).addClass("addedFav");
+  }
+  if (debug) console.log("___________________");
+  let favMenu = getCookie("fav-menu");
+  for (let val of favMenu.split("!")) {
+    if (debug) console.log("fav-menu-" + val);
+    $("#fav-menu-" + val).addClass("addedFav2");
+  }
+}
+
+// Submit --------------------------------------------------------------
 $("#ContactForm").on("submit", function (e) {
   e.preventDefault();
-  // console.log("Sended");
+  // CMT console.log("Sended");
 
   $.getJSON("https://api.ipify.org?format=json", function (data) {
     emailjs.init("KAe5kfyvpRuOXbuIw"); //please encrypted user id for malicious attacks
