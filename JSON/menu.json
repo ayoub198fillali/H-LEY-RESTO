@@ -2,116 +2,116 @@
   {
     "Name": "Riz sauce haricots légumes",
     "Rate": 5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Riz au choix sauce à base d'haricots, légumes mijotés ai feu doux",
     "Prix": "15.00"
   },
 
   {
     "Name": "Bannane & œufs ",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Banane vert, œufs à base de oignons poivrons avocats",
     "Prix": "12.00"
   },
   {
     "Name": "Bouillon bœuf et légumes ",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Viande bœuf pomme de terre igname,  bannane, carottes épinards cresson ",
     "Prix": "13.00"
   },
   {
     "Name": "Riz collé viande au choix",
     "Rate": 4,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Bœuf frit ou en sauce, servir avec riz au choix ",
     "Prix": "12.00"
   },
   {
     "Name": "Banane pesé poisson",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Poisson frit banane verte pesé pikliz",
     "Prix": "10.00"
   },
   {
     "Name": "Riz collé salade viande au choix",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Riz collé haricots salade poulet frit. ",
     "Prix": "11.00"
   },
   {
     "Name": "Bokit v1",
     "Rate": 5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Pâte fait maison,  poulet,  salades sauce a base de mayonnaise.",
     "Prix": "6.00"
   },
   {
     "Name": "Bokit v2",
     "Rate": 5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Pâte fait maison,  poulet,  salades sauce a base de mayonnaise",
     "Prix": "7.00"
   },
   {
     "Name": "Bokit v3",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Pâte fait maison,  poulet,  salades sauce a base de mayonnaise.",
     "Prix": "8.00"
   },
   {
     "Name": "Pâte viande au choix",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Pâte fait maison viande au choix ou œufs, ou saucisses au choix pikliz ",
     "Prix": "2.50"
   },
   {
     "Name": "Banane pesé porc pikliz",
     "Rate": 5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Bannane pesé frit, porc frit pikliz à base de choux carottes.",
     "Prix": "10.00"
   },
   {
     "Name": "Accras",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Pâte fait de maison à base de morrue épicés ",
     "Prix": "10.00"
   },
   {
     "Name": "Alloco",
     "Rate": 5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Banane plantains frit, salades viande au choix",
     "Prix": "9.00"
   },
   {
     "Name": "Banane igname & pomme de terre viande au choix",
     "Rate": 5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Bannane vert, igname pommes de terre à base de morrue sallé ",
     "Prix": "11.00"
   },
   {
     "Name": "Banane pesé cabrit",
     "Rate": 5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Bannane pesé frit, cabrit pikliz salades",
     "Prix": "12.00"
   },
   {
     "Name": "Banane pesé poisson salade",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Riz djondjon, poisson frit banane pesé, salade pikliz.",
     "Prix": "15.00"
   },
   {
     "Name": "Spaghetti viande au choix",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Spaghettis aux saucisses et oignons.",
     "Prix": "7.00"
   },
   {
     "Name": "Banane salade aux betteraves poulet",
     "Rate": 4.5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Bannane vert, salades, betterave , poulet frit",
     "Prix": "11.00"
   },
   {
     "Name": "Ailes de poulet",
     "Rate": 5,
-    "Description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium",
+    "Description": "Ailes de poulet frit,  frites aux pommes de terre sauce Ketchup.",
     "Prix": "5.00"
   }
 ]
