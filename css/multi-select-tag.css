@@ -1,7 +1,7 @@
 .mult-select-tag {
   display: flex;
   width: 100%;
-  height: 50%;
+  /* height: 50%; */
   position: relative;
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),
@@ -9,6 +9,15 @@
   --border-color: rgb(218, 221, 224);
   font-family: Verdana, sans-serif;
   align-items: stretch;
+
+  background: #eee;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  color: var(--black);
+  text-transform: none;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 .mult-select-tag .wrapper {
   background: #eee;
@@ -21,7 +30,7 @@
 }
 .mult-select-tag .body {
   display: flex;
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color); */
   /* background: #fff; */
   min-height: 2.15rem;
   width: 100%;
@@ -56,6 +65,8 @@
   width: 20%;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  margin: -10px;
 }
 .mult-select-tag button {
   cursor: pointer;
@@ -75,6 +86,12 @@
   width: 1rem;
   height: 90%;
 }
+
+.mult-select-tag button:first-child svg polyline {
+  width: 100%;
+  height: 100%;
+}
+
 .mult-select-tag .drawer {
   position: absolute;
   background: #fff;
@@ -90,6 +107,7 @@
   list-style-type: none;
   padding: 0.5rem;
   margin: 0;
+  max-height: 350px;
 }
 .mult-select-tag ul li {
   padding: 0.5rem;

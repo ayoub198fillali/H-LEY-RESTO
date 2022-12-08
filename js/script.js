@@ -180,7 +180,7 @@ async function fetchData() {
             <p>
               ${element.Description}
             </p>
-            <a href="#order" class="btn">Commander</a>
+            <a href="#order" titre="${element.Name}" class="btn btnCommander">Commander</a>
             <span class="price">€${element.Prix}</span>
           </div>
         </div >
@@ -221,7 +221,7 @@ async function fetchData() {
           myStrCode += `<i class="fas fa-star-half-alt"></i>`;
         myStrCode += ` </div>
           <span class="price">€${element.Prix}</span>
-          <a href="#order" class="btn">Commander</a>
+          <a href="#order" titre="${element.Name}" class="btn btnCommander">Commander</a>
         </div>`;
         $("#myPlat").append(myStrCode);
         $(`#fav-plat-${index + 1}`).on("click", function (e) {
@@ -242,26 +242,46 @@ async function fetchData() {
           UpdateCookiesFavMenu1();
         });
       }
+      // ------------------------------------------------------------- //
+      // Add In Command Select All Plats
+      // console.log($("#multipleselect"));
+      $("#multipleselect").append(`<option> ${element.Name.trim()} </option>`);
     }
   } catch (reason) {
     console.log(`Reason: ${reason}`);
   } finally {
     if (debug) console.log("After Fetch");
+    new MultiSelectTag("multipleselect");
     applyAllCookies();
+    addCommandListner();
   }
 }
 fetchData();
 
 $("#favorite-pack").on("click", function (e) {
   e.preventDefault();
+  let favPlat = getCookie("fav-plat");
+  let favMenu = getCookie("fav-menu");
 
   myNotif(
     "info",
-    `Les plats populaires Favoris:\n 1, 2, 3
-   \nLes plats Menu Favoris:\n 4, 5, 6    `,
+    `Les plats populaires Favoris:\n ${favPlat.split("!")}
+   \nLes plats Menu Favoris:\n ${favMenu.split("!")}    `,
     2000
   );
 });
+
+// addCommandListner
+function addCommandListner() {
+  $(".btnCommander")
+    .off("click")
+    .on("click", function () {
+      console.log(`li[data-value='${$(this).attr("titre").trim()}']`);
+      $(`li[data-value='${$(this).attr("titre").trim()}']`).click();
+      $(".btn-container").click();
+      // $(this).attr("titre");
+    });
+}
 
 // Cookies --------------------------------------------------------------
 
@@ -333,26 +353,33 @@ function applyAllCookies() {
 $("#ContactForm").on("submit", function (e) {
   e.preventDefault();
   // CMT console.log("Sended");
+  let myCommand = [];
+  $(".item-label").each(function () {
+    myCommand.push($(this).html());
+  });
+  // console.log(myCommand.join(", "));
 
   $.getJSON("https://api.ipify.org?format=json", function (data) {
     emailjs.init("KAe5kfyvpRuOXbuIw"); //please encrypted user id for malicious attacks
     // https://dashboard.emailjs.com/admin/templates/tvk9clb
     let templateParams = {
       from_name: $("#formeNom").val(),
-      from_num: $("#formeCommande").val(),
+      from_num: myCommand.join(", "),
       commande: $("#formeNumber").val(),
       nbcommande: $("#formeCombien").val(),
       msg: $("#formeMessage").val(),
     };
 
-    emailjs.send("service_zhki1yu", "template_wxi2e5g", templateParams).then(
-      function () {
-        myNotif("success", "Message envoyé", 1000);
-        $("#ContactForm")[0].reset();
-      },
-      function () {
-        myNotif("error", "Message non envoyé...", 1000);
-      }
-    );
+    console.log(templateParams);
+
+    // emailjs.send("service_zhki1yu", "template_wxi2e5g", templateParams).then(
+    //   function () {
+    //     myNotif("success", "Message envoyé", 1000);
+    //     $("#ContactForm")[0].reset();
+    //   },
+    //   function () {
+    //     myNotif("error", "Message non envoyé...", 1000);
+    //   }
+    // );
   });
 });

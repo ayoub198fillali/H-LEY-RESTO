@@ -469,7 +469,8 @@ header .icons #menu-bars {
   color: var(--light-color);
   font-size: 1.6rem;
   padding: 0.5rem 0;
-  line-height: 1.5;
+  line-height: 1.5;    height: 75px;
+  text-align: justify;
 }
 
 .menu .box-container .box .content .price {

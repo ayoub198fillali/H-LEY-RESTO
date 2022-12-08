@@ -289,15 +289,12 @@
           </div>
 
           <div class="input">
-            <span
-              >Votre commande
-              <p style="color: red; display: inline">*</p></span
-            >
+            <span>Votre commande </span>
             <select name="multipleselect" id="multipleselect" multiple>
-              <option>A</option>
+              <!-- <option>A</option>
               <option>B</option>
               <option>C</option>
-              <option>D</option>
+              <option>D</option> -->
             </select>
           </div>
         </div>
@@ -312,6 +309,7 @@
               type="votre numéro"
               placeholder="Entrez votre numéro"
               maxlength="15"
+              minlength="10"
               required
             />
           </div>
@@ -322,6 +320,8 @@
               id="formeCombien"
               type="number"
               placeholder="Combien de commandes"
+              min="0"
+              max="10000"
             />
           </div>
         </div>
@@ -334,7 +334,7 @@
             >
             <textarea
               name=""
-              placeholder="entrez votre message"
+              placeholder="Entrez votre message"
               id="formeMessage"
               cols="60"
               rows="10"
@@ -407,9 +407,8 @@
     <!-- custom js file link  -->
     <script src="js/jquery.image-popup.js"></script>
     <script src="js/script.js"></script>
+
     <script src="js/multi-select-tag.js"></script>
-    <script>
-      new MultiSelectTag("multipleselect");
-    </script>
+    <script></script>
   </body>
 </html>
