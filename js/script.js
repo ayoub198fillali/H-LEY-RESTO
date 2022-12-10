@@ -372,14 +372,14 @@ $("#ContactForm").on("submit", function (e) {
 
     console.log(templateParams);
 
-    // emailjs.send("service_zhki1yu", "template_wxi2e5g", templateParams).then(
-    //   function () {
-    //     myNotif("success", "Message envoyé", 1000);
-    //     $("#ContactForm")[0].reset();
-    //   },
-    //   function () {
-    //     myNotif("error", "Message non envoyé...", 1000);
-    //   }
-    // );
+    emailjs.send("service_zhki1yu", "template_wxi2e5g", templateParams).then(
+      function () {
+        myNotif("success", "Message envoyé", 1000);
+        $("#ContactForm")[0].reset();
+      },
+      function () {
+        myNotif("error", "Message non envoyé...", 1000);
+      }
+    );
   });
 });
