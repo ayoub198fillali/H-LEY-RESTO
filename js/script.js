@@ -246,7 +246,7 @@ async function fetchData() {
     // Get Data From Server ==================================
     try {
       // let myData = await fetch("../JSON/Planet.json");
-      let myData = await fetch("../JSON/PlatsSlide.json");
+      // let myData = await fetch("../JSON/PlatsSlide.json");
       let myData = await fetch(
         "https://raw.githubusercontent.com/ayoub198fillali/H-LEY-RESTO/main/JSON/PlatsSlide.json"
       );
