@@ -207,9 +207,11 @@ async function fetchData() {
       if (POPULAR.includes(index + 1)) {
         ii++;
         myStrCode = `<div class="box" id="plat-${index + 1}">
+        <div class="shadow">
+          <img src="images/menu-${index + 1}.jpg" alt="" />
+        </div>
         <a id="fav-plat-${index + 1}" class="fas fa-heart"></a>
         <a id="eye-plat-${index + 1}" class="fas fa-eye"></a>
-        <img src="images/plat-${ii}.png" alt="" />
         <h3>${element.Name}</h3>
         <div class="stars">
           `;
