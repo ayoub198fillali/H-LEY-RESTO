@@ -2,6 +2,7 @@
 let debug = false;
 let POPULAR = [1, 3, 4, 6, 18];
 ////////////
+let swiper;
 let menu = document.querySelector("#menu-bars");
 let navbar = document.querySelector(".navbar");
 
@@ -42,43 +43,29 @@ document.querySelector("#close").onclick = () => {
   document.querySelector("#search-form").classList.remove("active");
 };
 
-var swiper = new Swiper(".home-slider", {
-  spaceBetween: 30,
-  centeredSlides: true,
-  autoplay: {
-    delay: 7500,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  loop: true,
-});
-
-var swiper = new Swiper(".review-slider", {
-  spaceBetween: 20,
-  centeredSlides: true,
-  autoplay: {
-    delay: 7500,
-    disableOnInteraction: false,
-  },
-  loop: true,
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    640: {
-      slidesPerView: 2,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-});
+// var swiper = new Swiper(".review-slider", {
+//   spaceBetween: 20,
+//   centeredSlides: true,
+//   autoplay: {
+//     delay: 7500,
+//     disableOnInteraction: false,
+//   },
+//   loop: true,
+//   breakpoints: {
+//     0: {
+//       slidesPerView: 1,
+//     },
+//     640: {
+//       slidesPerView: 2,
+//     },
+//     768: {
+//       slidesPerView: 2,
+//     },
+//     1024: {
+//       slidesPerView: 3,
+//     },
+//   },
+// });
 
 function loader() {
   document.querySelector(".loader-container").classList.add("fade-out");
@@ -90,6 +77,7 @@ function fadeOut() {
 
 window.onload = fadeOut;
 
+//Noifier Sweet
 function myNotif(type, msg, time = 1000) {
   const Toast = Swal.mixin({
     toast: true,
@@ -141,6 +129,9 @@ $("img").imagePopup({
 /////////////////////////////////////////////////////////
 ////////////////////DATA FROM SERVER/////////////////////
 /////////////////////////////////////////////////////////
+
+// =============================== //
+
 let ii = 0;
 let description = {};
 // Get Data From Server
@@ -252,10 +243,64 @@ async function fetchData() {
   } catch (reason) {
     console.log(`Reason: ${reason}`);
   } finally {
-    if (debug) console.log("After Fetch");
-    new MultiSelectTag("multipleselect");
-    applyAllCookies();
-    addCommandListner();
+    // Get Data From Server ==================================
+    try {
+      // let myData = await fetch("../JSON/Planet.json");
+      let myData = await fetch("../JSON/PlatsSlide.json");
+      let myData = await fetch(
+        "https://raw.githubusercontent.com/ayoub198fillali/H-LEY-RESTO/main/JSON/PlatsSlide.json"
+      );
+
+      let jsData = await myData.json();
+      let myStrCode = "";
+      for (const [index, element] of jsData.entries()) {
+        console.log(index);
+        console.log(element);
+        myStrCode = `
+        <div class="swiper-slide slide">
+          <div class="content">
+            <span>Notre plat spécial ${element.num.trim()}</span>
+            <h3>${element.Name.trim()}</h3>
+            <p>${element.Description.trim()}</p>
+            <a href="#order" titre="${element.Name.trim()}" class="btn btnCommander">Commander</a>
+          </div>
+          <div class="image">
+            <img src="images/home-img-${element.num.trim()}.png" alt="" />
+          </div>
+        </div>        
+        `;
+        $("#homeSlider").append(myStrCode);
+        $("#multipleselect").prepend(
+          `<option> ${element.Name.trim()} </option>`
+        );
+      }
+    } catch (reason) {
+      console.log(`Reason: ${reason}`);
+    } finally {
+      if (debug) console.log("After Fetch");
+
+      swiper = new Swiper(".home-slider", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 7500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        loop: true,
+      });
+      new MultiSelectTag("multipleselect");
+      applyAllCookies();
+      addCommandListner();
+    }
+
+    // if (debug) console.log("After Fetch");
+    // new MultiSelectTag("multipleselect");
+    // applyAllCookies();
+    // addCommandListner();
   }
 }
 fetchData();

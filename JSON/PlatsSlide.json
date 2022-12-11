@@ -1,0 +1,19 @@
+[
+  {
+    "num": "1",
+    "Name": "Plat Emblématique",
+    "Description": "Plat emblématique de la cuisine haïtienne! Morceaux de porc mariné dans notre sauce d'épices secrètes et par la suite frits juste à point. Un vrai délice!"
+  },
+
+  {
+    "num": "2",
+    "Name": "Le Fameux Griot",
+    "Description": "Au menu, des classiques de la cuisine haïtienne sont à l’affiche, tels que le riz «collé», le griot qui sont des morceaux de porc frits, du poulet,  cabrit,  des légumes façon créole et plus encore. Pour finir, les portions pour apporter sont très généreuses, au point de ne jamais voir le fond de votre assiette!"
+  },
+
+  {
+    "num": "3",
+    "Name": "Le Fameux Griot 2",
+    "Description": "Au menu, des classiques de la cuisine haïtienne sont à l’affiche, tels que le riz «collé», le griot qui sont des morceaux de porc frits, du poulet,  cabrit,  des légumes façon créole et plus encore. Pour finir, les portions pour apporter sont très généreuses, au point de ne jamais voir le fond de votre assiette!"
+  }
+]
