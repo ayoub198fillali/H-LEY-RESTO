@@ -623,7 +623,7 @@ header .icons #menu-bars {
   margin-top: 1.5rem;
 }
 
-.footer .credit span {
+.footer .credit a {
   color: var(--mainColor);
 }
 

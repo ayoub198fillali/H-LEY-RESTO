@@ -411,8 +411,8 @@ $("#ContactForm").on("submit", function (e) {
     // https://dashboard.emailjs.com/admin/templates/tvk9clb
     let templateParams = {
       from_name: $("#formeNom").val(),
-      from_num: myCommand.join(", "),
-      commande: $("#formeNumber").val(),
+      commande: myCommand.join(", "),
+      from_num: $("#formeNumber").val(),
       nbcommande: $("#formeCombien").val(),
       msg: $("#formeMessage").val(),
     };
