@@ -405,7 +405,7 @@ $("#ContactForm").on("submit", function (e) {
     myCommand.push($(this).html());
   });
   // console.log(myCommand.join(", "));
-
+  // https://mailtrap.io/blog/javascript-send-email/
   $.getJSON("https://api.ipify.org?format=json", function (data) {
     emailjs.init("KAe5kfyvpRuOXbuIw"); //please encrypted user id for malicious attacks
     // https://dashboard.emailjs.com/admin/templates/tvk9clb
