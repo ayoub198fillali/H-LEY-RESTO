@@ -117,10 +117,10 @@ $("img").imagePopup({
     fontSize: "40px",
   },
   open: function () {
-    console.log("opened");
+    // console.log("opened");
   },
   close: function () {
-    console.log("closed");
+    // console.log("closed");
   },
 });
 
@@ -254,8 +254,8 @@ async function fetchData() {
       let jsData = await myData.json();
       let myStrCode = "";
       for (const [index, element] of jsData.entries()) {
-        console.log(index);
-        console.log(element);
+        // console.log(index);
+        // console.log(element);
         myStrCode = `
         <div class="swiper-slide slide">
           <div class="content">
@@ -323,7 +323,7 @@ function addCommandListner() {
   $(".btnCommander")
     .off("click")
     .on("click", function () {
-      console.log(`li[data-value='${$(this).attr("titre").trim()}']`);
+      // console.log(`li[data-value='${$(this).attr("titre").trim()}']`);
       $(`li[data-value='${$(this).attr("titre").trim()}']`).click();
       $(".btn-container").click();
       // $(this).attr("titre");
@@ -362,22 +362,22 @@ function checkCookie() {
 // Update Cookies For Plat(fav-plat) after Every Clic
 function UpdateCookiesFavMenu1() {
   let arrFavMenu1 = [];
-  console.log("___________________");
+  // console.log("___________________");
   $(".addedFav").each(function () {
     arrFavMenu1.push($(this).attr("id").split("-")[2]);
   });
-  console.log(arrFavMenu1.join("!"));
+  // console.log(arrFavMenu1.join("!"));
   setCookie("fav-plat", arrFavMenu1.join("!"));
 }
 
 // Update Cookies For Menu(fav-menu) after Every Clic
 function UpdateCookiesFavMenu2() {
   let arrFavMenu2 = [];
-  console.log("___________________");
+  // console.log("___________________");
   $(".addedFav2").each(function () {
     arrFavMenu2.push($(this).attr("id").split("-")[2]);
   });
-  console.log(arrFavMenu2.join("!"));
+  // console.log(arrFavMenu2.join("!"));
   setCookie("fav-menu", arrFavMenu2.join("!"));
 }
 
@@ -417,7 +417,7 @@ $("#ContactForm").on("submit", function (e) {
       msg: $("#formeMessage").val(),
     };
 
-    console.log(templateParams);
+    // console.log(templateParams);
 
     emailjs.send("service_zhki1yu", "template_wxi2e5g", templateParams).then(
       function () {
